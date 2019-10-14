@@ -9,7 +9,6 @@
   </parent>
 
   <artifactId>gs_ear</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>ear</packaging>
 
   <name>gs_ear</name>
@@ -24,28 +23,28 @@
     <dependency>
 	    <groupId>co.gestionsoft</groupId>
 	    <artifactId>gs_util</artifactId>	    
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>${project.parent.version}</version>
 		<type>jar</type>
 	</dependency>
 	
 	<dependency>
 	    <groupId>co.gestionsoft</groupId>
 	    <artifactId>gs_dao</artifactId>	    
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>${project.parent.version}</version>
 		<type>jar</type>
 	</dependency>
 	
 	<dependency>
 	    <groupId>co.gestionsoft</groupId>
 	    <artifactId>gs_business</artifactId>	    
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>${project.parent.version}</version>
 		<type>jar</type>
 	</dependency>
 	
 	<dependency>
 	    <groupId>co.gestionsoft</groupId>
 	    <artifactId>gs_web</artifactId>	    
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>${project.parent.version}</version>
 		<type>war</type>
 	</dependency>
     

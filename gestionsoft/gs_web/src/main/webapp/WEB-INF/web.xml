@@ -1,8 +1,8 @@
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xmlns="http://java.sun.com/xml/ns/javaee" 
+		 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" 
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+		 id="WebApp_ID" version="3.1">
 		 
     <!-- Se definen el displayName y la pagina de inicio de la aplicacion. -->
 	<display-name>/gestionsoft</display-name>
@@ -10,5 +10,81 @@
 		<welcome-file>/index.html</welcome-file>
 	</welcome-file-list>
 	
+	<!-- Se indica a la aplicacion el sufijo real del fichero que contiene contenido faces 2.0. -->
+ 	<context-param>
+  		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+  		<param-value>.xhtml</param-value>
+ 	</context-param>
+
+	<!-- se indica el sufijo por defecto para la gestion de paginas facelets (default) 
+		TODO JGP: Cambiar a faces.
+	--> 
+  	<context-param>
+  		<param-name>javax.faces.FACELETS_SUFFIX</param-name>
+  		<param-value>.xhtml</param-value>
+ 	</context-param>
+ 
+ 	<!-- Se indica que el formateo HTML sea legible (default). Solo MyFaces. -->
+ 	<context-param>
+ 		<param-name>org.apache.myfaces.PRETTY_HTML</param-name>
+ 		<param-value>true</param-value>
+ 	</context-param>
+ 	
+ 	
+ 	<!-- Definicion del servlet faces. -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Se define el tiempo por defecto de la duracion de la session. -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
+	<!-- Se definen las paginas de libre acceso a la aplicacion. --> 
+	<security-constraint>
+  		<web-resource-collection>
+    		<web-resource-name>Public</web-resource-name>
+    		<description>Patron de pantallas accesibles publicamente</description>
+    		<url-pattern>/pages/index.xhtml</url-pattern>
+    		<url-pattern>/index.html</url-pattern>
+		</web-resource-collection>
+  	</security-constraint>
+  	
+  	<!-- Se definen las paginas de error del sistema. -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/error403.jsp</location>
+	</error-page>
+		<error-page>
+		<error-code>404</error-code>
+		<location>/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error500.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>/error500.jsp</location>
+	</error-page>	
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/error500.jsp</location>
+	</error-page>
 	
 </web-app>

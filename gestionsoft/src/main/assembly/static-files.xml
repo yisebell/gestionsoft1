@@ -1,0 +1,51 @@
+<assembly>
+	<id>static-files</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<!-- Conjunto de ficheros de tipo hoja de estilos y javascript. -->
+		<fileSet>
+			<directory>./gs_web/src/main/static</directory>
+			<includes>
+				<include>resources/stylesheet/**</include>
+				<include>resources/js/**</include>
+			</includes>
+			<excludes>
+				<exclude>**/.*</exclude>
+			</excludes>
+			<outputDirectory>gestionsoft_static</outputDirectory>
+			<filtered>true</filtered>
+		</fileSet>
+
+		<!-- Conjunto de ficheros de tipo binario que no deben ser filtrados. --> 
+		<fileSet>
+			<directory>./gs_web/src/main/static</directory>
+			<includes>
+				<include>resources/images/**</include>
+				<include>help/**</include>
+			</includes>
+			<excludes>
+				<exclude>**/.*</exclude>
+			</excludes>
+			<outputDirectory>gestionsoft_static</outputDirectory>
+			<filtered>false</filtered>
+		</fileSet>
+
+		<!-- Conjunto de ficheros de tipo HTML estatico -->
+		<fileSet>
+			<directory>./gs_web/src/main/static</directory>
+			<includes>
+				<include>*.html</include>
+			</includes>
+			<excludes>
+				<exclude>**/.*</exclude>
+			</excludes>
+			<outputDirectory>.</outputDirectory>
+			<filtered>true</filtered>
+		</fileSet>
+	</fileSets>
+</assembly>
+	
+
