@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- 
+	Definicion del fichero de webapp context para la inicializacion de los beans manejados por Spring Framework.
+	
+	@author james
+	@date 20/10/2019
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xmlns:jee="http://www.springframework.org/schema/jee" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop 
+	   					   http://www.springframework.org/schema/aop/spring-aop-5.2.xsd
+	   					   http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans-5.2.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context-5.2.xsd
+	   					   http://www.springframework.org/schema/jee
+	   					   http://www.springframework.org/schema/jee/spring-jee-5.2.xsd
+	   					   http://www.springframework.org/schema/tx
+	   					   http://www.springframework.org/schema/tx/spring-tx-5.2.xsd">
+
+
+	<!-- Se habilita el escaneo de paquetes para view, business y dao (Spring-managed).-->
+    <context:component-scan base-package="gestionsoft" />
+ 	<context:annotation-config />
+ 	
+
+</beans>

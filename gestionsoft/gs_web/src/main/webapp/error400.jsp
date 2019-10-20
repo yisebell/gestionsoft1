@@ -11,7 +11,7 @@
 <meta name="author" content="GestionSoft" />
 <meta http-equiv="Pragma" content="no-cache" />
 
-<link rel="stylesheet" media="screen" type="text/css" href="/gestionsoft_static/resources/stylesheet/gestionsoft.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="/gestionsoft_static/resources/stylesheet/gs.css" />
  
 </head>
 <body>

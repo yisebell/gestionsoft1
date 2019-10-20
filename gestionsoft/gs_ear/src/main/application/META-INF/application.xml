@@ -8,7 +8,7 @@
 	<initialize-in-order>true</initialize-in-order>
 	<module>
 		<web>
-			<web-uri>gs_web-0.0.1-SNAPSHOT.war</web-uri>
+			<web-uri>gs_web.war</web-uri>
 			<context-root>/gestionsoft</context-root>
 		</web>
 	</module>

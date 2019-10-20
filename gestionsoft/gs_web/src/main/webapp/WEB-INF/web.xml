@@ -10,6 +10,13 @@
 		<welcome-file>/index.html</welcome-file>
 	</welcome-file-list>
 	
+	<!-- Parametro en donde se indica la ubicacion de los ficheros de contexto de Spring Framework. -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml
+		</param-value>
+	</context-param>
+	
 	<!-- Se indica a la aplicacion el sufijo real del fichero que contiene contenido faces 2.0. -->
  	<context-param>
   		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
@@ -29,6 +36,15 @@
  		<param-name>org.apache.myfaces.PRETTY_HTML</param-name>
  		<param-value>true</param-value>
  	</context-param>
+ 	
+ 	<context-param>
+	    <param-name>primefaces.THEME</param-name>
+	    <param-value>omega</param-value>
+	</context-param>
+	
+	<listener>
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ 	</listener>
  	
  	
  	<!-- Definicion del servlet faces. -->

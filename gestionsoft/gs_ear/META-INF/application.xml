@@ -7,7 +7,7 @@
   
 	<module>
 		<web>
-			<web-uri>target/gs_ear-0.0.1-SNAPSHOT/gs_web-0.0.1-SNAPSHOT.war</web-uri>
+			<web-uri>target/gs_ear-0.0.1-SNAPSHOT/gs_web.war</web-uri>
 			<context-root></context-root>
 		</web>
 	</module>

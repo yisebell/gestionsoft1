@@ -49,4 +49,55 @@
 	</dependency>
     
   </dependencies>
+  
+    <!-- Definicion de los parametros del plugin de empaquetado EAR. -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<finalName>gestionsoft-ear</finalName>
+					<filtering>true</filtering>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<generateApplicationXml>true</generateApplicationXml>
+					<version>6</version>
+					<modules>
+						<webModule>
+							<groupId>co.gestionsoft</groupId>
+							<artifactId>gs_web</artifactId>
+							<contextRoot>/gestionsoft</contextRoot>
+							<bundleFileName>gs_web.war</bundleFileName>	
+						</webModule>
+						
+						<!-- Se incluye la definicion de jar module para el renombrado de artefactos. -->
+                        <jarModule>
+							<groupId>co.gestionsoft</groupId>
+							<artifactId>gs_dao</artifactId>
+							<bundleFileName>gs_dao.jar</bundleFileName>
+                         </jarModule>
+                         <jarModule>
+							<groupId>co.gestionsoft</groupId>
+							<artifactId>gs_util</artifactId>
+							<bundleFileName>gs_util.jar</bundleFileName>
+                         </jarModule> 
+                         <jarModule>
+							<groupId>co.gestionsoft</groupId>
+							<artifactId>gs_business</artifactId>
+							<bundleFileName>gs_business.jar</bundleFileName>
+                         </jarModule>
+                         <jarModule>
+							<groupId>co.gestionsoft</groupId>
+							<artifactId>gs_persistence</artifactId>
+							<bundleFileName>gs_persistence.jar</bundleFileName>
+                         </jarModule>                                                   						
+					</modules>
+
+					<packagingExcludes>**/.*</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 </project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        version="2.0">
+    <persistence-unit name="PU_GS" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/OracleDS</jta-data-source>
+		<jar-file>gs_persistence.jar</jar-file>
+		
+		<class>persistence.entity.Empresa</class>		
+		<class>persistence.entity.Rol</class>
+		<class>persistence.entity.User</class>
+		
+		<properties>
+			<property name="hibernate.archive.autodetection" value="class, hbm"/>
+
+            <!-- Se define como encontrar la transaccion: Declarativamente vs manualmente. -->
+            <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.CMTTransactionFactory" />
+
+            <!-- Se define como producir la transaccion. -->
+			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+
+			<!-- Se define el mecanismo de sincronizacion de transacciones para notificaciones al Persistence Manager sobre la sincronizacion. -->
+			<property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup" />
+        
+			<!-- Se establece el dialecto del proveedor para acceso a Oracle. -->        
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+				
+            <!-- Se establece el validador para la creación del Session Factory. No se deben actualizar el schema en la inicializacion. -->
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+			
+            <!-- Definicion del driver a utilizar. -->
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+
+         	<!-- Se define el esquema que se emplea, por defecto, para el acceso a base de datos. -->
+			<property name="hibernate.default_schema" value="GESTIONSOFT" />
+
+			<!-- CharSet para la conexion. -->
+            <property name="hibernate.connection.charSet" value="UTF-8"/>
+            
+            <!-- Formateo de la salida de hibernate para aumentar la legibilidad. -->
+	        <property name="hibernate.format_sql" value="true" />
+	        <property name="hibernate.use_sql_comments" value="true" />
+	
+
+			<!-- Generacion temporal de estadisticas. -->
+			<property name="hibernate.generate_statistics" value="false" />
+        </properties>		
+		
+    </persistence-unit>
+</persistence>

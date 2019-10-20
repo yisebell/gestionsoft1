@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -8,12 +7,58 @@
 	xmlns:p="http://primefaces.org/ui" template="../layout/indexLayout.xhtml">
 	<ui:define name="index">
 
-		<!-- Se define el formulario de autenticaicon para JAAS. -->
-		<form method="POST" action="">
-		
-			<h1>Hola Mundo!</h1>		
+		<h:form id="form">
 			
-		</form>
+			<h2>
+				<h:outputText value="#{messages['common.app.nombre']}" />
+			</h2>
+		
+			<p:dataTable var="empresa" value="#{empresaController.empresasSeleccionadas}">
+				<p:column headerText="ID">
+			        <h:outputText value="#{empresa.idEmpresa}" />
+			    </p:column>
+			    <p:column headerText="NIT">
+			        <h:outputText value="#{empresa.nit}" />
+			    </p:column>
+			    <p:column headerText="RAZON SOCIAL">
+			        <h:outputText value="#{empresa.razonSocial}" />
+			    </p:column>
+			    <p:column headerText="SIGLA">
+			        <h:outputText value="#{empresa.sigla}" />
+			    </p:column>
+			    <p:column headerText="PREFIJO">
+			        <h:outputText value="#{empresa.prefijo}" />
+			    </p:column>
+			    <p:column headerText="DIRECCION">
+			        <h:outputText value="#{empresa.direccion}" />
+			    </p:column>
+			    <p:column headerText="DEPARTAMENTO">
+			        <h:outputText value="#{empresa.departamento}" />
+			    </p:column>
+			    <p:column headerText="CIUDAD">
+			        <h:outputText value="#{empresa.ciudad}" />
+			    </p:column>
+			    <p:column headerText="TELEFONO">
+			        <h:outputText value="#{empresa.telefono}" />
+			    </p:column>
+			    <p:column headerText="LOGO">
+			        <h:outputText value="#{empresa.logo}" />
+			    </p:column>
+			    <p:column headerText="MISION">
+			        <h:outputText value="#{empresa.mision}" />
+			    </p:column>
+			    <p:column headerText="VISION">
+			        <h:outputText value="#{empresa.vision}" />
+			    </p:column>
+			    <p:column headerText="VALORES">
+			        <h:outputText value="#{empresa.valores}" />
+			    </p:column>
+			    <p:column headerText="SLOGAN">
+			        <h:outputText value="#{empresa.slogan}" />
+			    </p:column>
+			</p:dataTable>	
+			
+		</h:form>
 
 	</ui:define>
 
