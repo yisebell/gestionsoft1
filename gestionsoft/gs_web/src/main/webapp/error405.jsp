@@ -17,7 +17,7 @@
 <body>
 	<div class="contenidoErrores">
 		<div>
-			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png"/>
+			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png" class="logo" />
 		</div>
 		<h1 class="textoError">M&eacute;todo no permitido. Error 405.</h1>	
 		<h2 class="textoError">La petici&oacute;n recibida no corresponde con un m&eacute;todo GET o POST v&aacute;lidos.<br/></h2>

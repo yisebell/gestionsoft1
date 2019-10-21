@@ -1,4 +1,4 @@
-package web.view.util;
+package gestionsoft.web.view.util;
 
 import java.util.Stack;
 
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import util.domain.AbstractGenericDTO;
-import web.view.session.BackwardState;
-import web.view.session.SessionContainer;
+import gestionsoft.web.view.session.BackwardState;
+import gestionsoft.web.view.session.SessionContainer;
 
 
 

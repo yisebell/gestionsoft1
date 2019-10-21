@@ -56,7 +56,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
-				<version>3.0.1</version>
 				<configuration>
 					<finalName>gestionsoft-ear</finalName>
 					<filtering>true</filtering>

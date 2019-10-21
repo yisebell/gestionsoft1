@@ -5,9 +5,21 @@
                                   http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
               version="2.1">
 
+	<!-- Se define el phase listener de la aplicacion. -->
+	<lifecycle>
+		<phase-listener>gestionsoft.web.listener.GSPhaseListener</phase-listener>
+	</lifecycle>
 
 	<!-- Se define el soporte de Spring para EL sobre faces. -->
 	<application>
+		
+		<!-- 
+			Requerido unicamente para que las expresiones faces puedan referirse a nombres de
+			Spring-managed Services, por ejemplo, en properties de 1.2 o @ManagedProperty de 2.0.
+			
+			Recuerda que en JSF 1.1 en ulgar de SpringBeanFacesELResolver se empleaba org.springframework.web.jsf.DelegatingVariableResolver.
+		-->
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
 		
 		<!-- Se define la ruta y clave del fichero de definicion de textos. --> 
 		<resource-bundle>

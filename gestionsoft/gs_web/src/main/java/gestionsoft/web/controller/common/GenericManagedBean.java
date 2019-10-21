@@ -1,4 +1,4 @@
-package web.controller.common;
+package gestionsoft.web.controller.common;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;

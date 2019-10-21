@@ -8,10 +8,6 @@
 	<ui:define name="index">
 
 		<h:form id="form">
-			
-			<h2>
-				<h:outputText value="#{messages['common.app.nombre']}" />
-			</h2>
 		
 			<p:dataTable var="empresa" value="#{empresaController.empresasSeleccionadas}">
 				<p:column headerText="ID">
@@ -57,6 +53,9 @@
 			        <h:outputText value="#{empresa.slogan}" />
 			    </p:column>
 			</p:dataTable>	
+			
+			<p:commandButton id="cargaEmpresa" value="#{messages['common.app.cargaEmpresa']}" 
+			immediate="true" ajax="false" styleClass="ui-priority-primary" actionListener="#{empresaController.cargarEmpresa()}"/>
 			
 		</h:form>
 

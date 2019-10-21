@@ -17,7 +17,7 @@
 <body>
 	<div class="contenidoErrores">
 		<div>
-			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png"/>
+			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png" class="logo"/>
 		</div>
 		<h1 class="textoError">Solicitud incorrecta. Error 400.</h1>	
 		<h2 class="textoError">Una p&aacute;gina de error 400 indica que la petici&oacute;n realizada no es correcta y por tanto, no se ha podido procesar.<br/>

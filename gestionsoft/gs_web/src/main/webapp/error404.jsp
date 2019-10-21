@@ -17,7 +17,7 @@
 <body>
 	<div class="contenidoErrores">
 		<div>
-			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png"/>
+			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png" class="logo" />
 		</div>
 		<h1 class="textoError">P&aacute;gina no encontrada. Error 404.</h1>	
 		<h2 class="textoError">Una p&aacute;gina de error 404 indica que el navegador fue capaz de comunicarse con el servidor pero <br/>

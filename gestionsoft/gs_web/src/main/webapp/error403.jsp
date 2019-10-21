@@ -17,7 +17,7 @@
 <body>
 	<div class="contenidoErrores">
 		<div>
-			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png"/>
+			<img alt="Logo GestionSoft" src="/gestionsoft_static/resources/images/logo.png" class="logo" />
 		</div>
 		<h1 class="textoError">Acceso denegado</h1>	
 		<h2 class="textoError">Para regresar a la p&aacute;gina en la que se encontraba antes del error, pinche en el bot&oacute;n Volver.<br/>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" template="../layout/layout.xhtml">
+	<h:head>
+		<f:facet name="first">
+		    <meta http-equiv="X-UA-Compatible" content="IE=8" />		   
+		</f:facet>		
+	</h:head>
+	<ui:define name="body">
+      <h:form id="form">
+			<h2><h:outputText value="#{messages['main.titulo']}" /></h2>
+			<p:panel id="contenidoCentral">
+				<h3><h:outputText value="#{messages['main.bienvenido']}" /></h3>
+			</p:panel>		
+      </h:form>
+	</ui:define>
+</ui:composition>

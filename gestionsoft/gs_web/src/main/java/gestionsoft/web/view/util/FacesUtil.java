@@ -1,4 +1,4 @@
-package web.view.util;
+package gestionsoft.web.view.util;
 
 import java.util.Map;
 

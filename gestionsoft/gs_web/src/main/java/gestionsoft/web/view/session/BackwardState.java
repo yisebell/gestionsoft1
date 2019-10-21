@@ -1,4 +1,4 @@
-package web.view.session;
+package gestionsoft.web.view.session;
 
 import java.io.Serializable;
 

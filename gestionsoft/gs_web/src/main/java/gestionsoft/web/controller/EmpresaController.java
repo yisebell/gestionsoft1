@@ -1,7 +1,7 @@
 /**
  * 
  */
-package web.controller;
+package gestionsoft.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import javax.faces.bean.ViewScoped;
 
 import business.EmpresaService;
 import util.domain.EmpresaDTO;
-import web.controller.common.GenericManagedBean;
-import web.view.util.FacesUtil;
+import gestionsoft.web.controller.common.GenericManagedBean;
+import gestionsoft.web.view.util.FacesUtil;
 
 /**
  * Clase controller para Empresa.
@@ -56,7 +56,7 @@ public class EmpresaController extends GenericManagedBean {
 	 */
 	@PostConstruct
 	public void init() {
-		empresasSeleccionadas = getEmpresaService().obtenerEmpresa();
+		//empresasSeleccionadas = getEmpresaService().obtenerEmpresa();
 	}
 	
 	/**
@@ -89,7 +89,7 @@ public class EmpresaController extends GenericManagedBean {
 	{
 		if (empresasSeleccionadas == null)
 		{
-			empresasSeleccionadas = new ArrayList<EmpresaDTO>();
+			empresasSeleccionadas = new ArrayList<>();
 		}
 		return empresasSeleccionadas;
 	}
@@ -101,6 +101,13 @@ public class EmpresaController extends GenericManagedBean {
 	 */
 	public void setEmpresasSeleccionadas(List<EmpresaDTO> empresasSeleccionadas){
 		this.empresasSeleccionadas = empresasSeleccionadas;
+	}
+	
+	/**
+	 * Metodo para cargar la empresa
+	 */
+	public void cargarEmpresa() {
+		empresasSeleccionadas = getEmpresaService().obtenerEmpresa();
 	}
 
 }

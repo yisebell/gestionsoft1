@@ -49,6 +49,65 @@
 			<directory>src/main/java</directory>
 		</resource>
 	</resources>
+	<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Comment out the format and items tags if you want the implementation
+                        build number fom scm, see e.g. the m2m example project. -->
+                    <format>{0,date,yyyy-MM-dd HH:mm:ss}</format>
+                    <items>
+                        <item>timestamp</item>
+                    </items>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <packagingExcludes>**/.*</packagingExcludes>
+                    <archive>
+                        <forced />
+                        <manifestEntries>
+                            <Build-Date>${timestamp}</Build-Date>
+                            <Build-Revision>${buildNumber}</Build-Revision>
+                            <Project-Version>${project.version}</Project-Version>
+                            <Hudson-BuildTag>${BUILD_TAG}</Hudson-BuildTag>
+                            <Mode>${env}</Mode>
+                            
+                            <!--  
+                            	a586979: En lugar de emplear el descriptor jboss deployment, se pueden incluir las 
+                            	dependencias via METAINF.
+                            <Dependencies>org.apache.log4j,org.apache.commons.logging,correos.arquitectura30,org.springframework</Dependencies>
+                            -->
+                             
+                        </manifestEntries>
+                    </archive>
+                    
+					<!-- Se configura la opcion de filtrado de propiedades en el ambito web (exclusion de imagenes). -->
+					<webResources>
+            			<resource>
+              				<filtering>false</filtering>
+              				<directory>src/main/static/resources/images</directory>
+            			</resource>		
+            			<resource>
+              				<filtering>false</filtering>
+              				<directory>src/main/static/help</directory>
+            			</resource>            						
+	            		<resource>
+	                		<filtering>true</filtering>
+	                		<directory>src/main/static</directory>
+	            		</resource>
+	        		</webResources>   
+	        		                  
+                </configuration>
+            </plugin>
+        </plugins>
   </build>
   
 </project>
