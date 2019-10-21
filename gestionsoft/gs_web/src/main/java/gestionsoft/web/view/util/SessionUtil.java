@@ -5,7 +5,7 @@ import java.util.Stack;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import util.domain.AbstractGenericDTO;
+import gestionsoft.util.domain.AbstractGenericDTO;
 import gestionsoft.web.view.session.BackwardState;
 import gestionsoft.web.view.session.SessionContainer;
 

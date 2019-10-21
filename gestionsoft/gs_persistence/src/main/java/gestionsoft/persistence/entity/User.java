@@ -1,7 +1,4 @@
-/**
- * 
- */
-package persistence.entity;
+package gestionsoft.persistence.entity;
 
 import java.io.Serializable;
 import java.util.Date;

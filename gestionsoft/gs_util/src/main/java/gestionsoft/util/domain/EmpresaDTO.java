@@ -1,82 +1,52 @@
-package persistence.entity;
-
-import java.io.Serializable;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+package gestionsoft.util.domain;
 
 /**
+ * DTO de la empresa
+ * 
  * @author james
  * @date 14/10/2019
  * @version 1.0
  * @see
  */
-@Entity
-@Table(name = "TB_GS_EMPRESA")
-@Access(AccessType.FIELD)
-public class Empresa implements Serializable{
+public class EmpresaDTO extends AbstractGenericDTO implements Comparable<EmpresaDTO>{
 
 	/**
 	 * Serial
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@SequenceGenerator(name = "SC_GS_EMPRESA", sequenceName = "SC_GS_EMPRESA", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SC_GS_EMPRESA")
-	@Column(name = "ID_EMPRESA")	
 	private long idEmpresa;
 	
-	@Column(name = "NIT")
 	private String nit;
 	
-	@Column(name = "RAZON_SOCIAL")
 	private String razonSocial;
 	
-	@Column(name = "SIGLA")
 	private String sigla;
 	
-	@Column(name = "PREFIJO")
 	private String prefijo;
 	
-	@Column(name = "DIRECCION")
 	private String direccion;
 	
-	@Column(name = "DEPARTAMENTO")
 	private String departamento;
 	
-	@Column(name = "CIUDAD")
 	private String ciudad;
 	
-	@Column(name = "TELEFONO")
 	private String telefono;
 	
-	@Column(name = "LOGO")
 	private String logo;
 	
-	@Column(name = "MISION")
 	private String mision;
 	
-	@Column(name = "VISION")
 	private String vision;
 	
-	@Column(name = "VALORES")
 	private String valores;
 	
-	@Column(name = "SLOGAN")
 	private String slogan;
 
 	/**
 	 * Constructor de la clase  
 	 */
-	public Empresa() {
+	public EmpresaDTO() {
 		super();
 	}
 
@@ -274,6 +244,12 @@ public class Empresa implements Serializable{
 	 */
 	public void setSlogan(String slogan) {
 		this.slogan = slogan;
+	}
+
+	@Override
+	public int compareTo(EmpresaDTO arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 } // fin class Empresa

@@ -26,8 +26,7 @@
 
 
 	<!-- Se habilita el escaneo de paquetes para view, business y dao (Spring-managed).-->
-    <context:component-scan base-package="gestionsoft" />
+    <context:component-scan base-package="gestionsoft, gestionsoft.dao, gestionsoft.business" />
  	<context:annotation-config />
  	
-
 </beans>

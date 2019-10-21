@@ -1,21 +1,19 @@
-/**
- * 
- */
-package business.impl;
+package gestionsoft.business.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.annotation.Propagation;
 
-import business.EmpresaService;
-import business.builder.EmpresaBuilder;
-import persistence.dao.EmpresaDAO;
-import persistence.entity.Empresa;
-import util.domain.EmpresaDTO;
+import gestionsoft.business.EmpresaService;
+import gestionsoft.business.builder.EmpresaBuilder;
+import gestionsoft.persistence.dao.EmpresaDAO;
+import gestionsoft.persistence.entity.Empresa;
+import gestionsoft.util.domain.EmpresaDTO;
 
 /**
  * 
@@ -26,11 +24,12 @@ import util.domain.EmpresaDTO;
  * @version 1.0
  * @see
  */
-@Service(value = "empresaService")
+@Service("empresaService")
 @Transactional(propagation = Propagation.SUPPORTS)
 public class EmpresaServiceImpl extends GenericServiceImpl implements EmpresaService {
 	
 	@Autowired
+	@Qualifier("empresaDAO")
 	private EmpresaDAO empresaDAO;
 
 	/**

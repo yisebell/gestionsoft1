@@ -1,4 +1,4 @@
-package persistence.dao.impl;
+package gestionsoft.persistence.dao.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -10,15 +10,15 @@ import javax.persistence.PersistenceContextType;
 
 import org.springframework.stereotype.Repository;
 
-import persistence.dao.GenericDAO;
-import persistence.dao.exception.GSDAOException;
+import gestionsoft.persistence.dao.GenericDAO;
+import gestionsoft.persistence.dao.exception.GSDAOException;
 
 
 /**
  * Clase que implementa la interface generica del DAO de la aplicacion.
  * 
- * @author a586979
- * @date 10/11/2014
+ * @author james
+ * @date 20/10/2019
  * @version 1.0
  * @see
  */
@@ -29,7 +29,7 @@ public abstract class AbstractGenericDAOImpl<Entity extends Serializable> implem
 	protected static final String PORCENTAJE = "%";	
 	
 	// Atributos de la clase.
-	@PersistenceContext(unitName = "PU_GS", type = PersistenceContextType.TRANSACTION)
+	@PersistenceContext(unitName = "PU_GS_NOXA", type = PersistenceContextType.TRANSACTION)
 	protected EntityManager nonXAEntityManager;
 	
 	/**

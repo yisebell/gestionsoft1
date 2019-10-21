@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A586979: Fichero XML de definicion de correspondencia y mapeos entre 
+	atributos de las entidades de persistencia y los atributos definidos en web-controller 
+	layer. -->
+<server-pagination>
+
+	<entity class="Empresa" default="codEmpresa">
+		<sortField name="idEmpresa">idEmpresa</sortField>
+		<sortField name="nit">nit</sortField>
+		<sortField name="razonSocial">razonSocial</sortField>
+		<sortField name="sigla">sigla</sortField>
+		<sortField name="prefijo">prefijo</sortField>
+		<sortField name="direccion">direccion</sortField>	
+		<sortField name="departamento">departamento</sortField>	
+		<sortField name="ciudad">ciudad</sortField>
+		<sortField name="telefono">telefono</sortField>
+		<sortField name="logo">logo</sortField>
+		<sortField name="mision">mision</sortField>	
+		<sortField name="vision">vision</sortField>	
+		<sortField name="valores">valores</sortField>
+		<sortField name="slogan">slogan</sortField>
+	</entity>
+	
+</server-pagination>

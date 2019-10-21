@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xmlns:jee="http://www.springframework.org/schema/jee" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop 
+	   					   www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	   					   http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	   					   http://www.springframework.org/schema/jee
+	   					   http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+	   					   http://www.springframework.org/schema/tx
+	   					   http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+
+    
+	<!-- Transaction manager JTA-XA. --> 
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManagerName" value="java:jboss/TransactionManager" />
+		<property name="userTransactionName" value="java:jboss/UserTransaction" />
+	</bean>
+	
+	<!-- 
+		Se define que las anotaciones transaccionales se gestionaran via transaction manager, controlada por AspectJ
+		weaving (compile) y proxy basado en interfaces.
+	-->
+	<tx:annotation-driven transaction-manager="transactionManager" mode="aspectj" />
+
+	<!-- Definicion de la abstract Entity Manager, extensible por los dos entity managers de la aplicacion. -->
+	<bean id="abstractEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" abstract="true" >
+         
+        <!-- Definicion de Hibernate como motor de persistencia bajo JPA. --> 
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="generateDdl" value="false" />
+                <property name="database" value="ORACLE"/>
+            </bean>
+        </property> 
+	
+        <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
+        </property> 
+	</bean>
+
+	<!-- Definicion de las factorias de manejadores de entidades: para manejadores con transaccionalidad XA y non-XA. --> 
+	<bean id="entityManagerFactory_noXA" parent="abstractEntityManagerFactory">
+        <property name="persistenceUnitName" value="PU_GS_NOXA" />
+	</bean>
+
+
+    <!-- Definicion de las anotaciones permitidas por Spring para el soporte JPA. -->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    
+	<!-- 
+		Se define el post procesor para la inyeccion de recursos JPA (EMF y EM) en Spring-managed beans.
+	 --> 
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>	
+	
+	<!-- Se define la configuracion basada en anotaciones. -->
+	<context:annotation-config />
+
+
+</beans>

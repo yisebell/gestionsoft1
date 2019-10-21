@@ -1,4 +1,4 @@
-package persistence.dao.exception;
+package gestionsoft.persistence.dao.exception;
 
 /**
  * Clase que representa el tipo de excepcion que propaga la capa DAO y que extiende

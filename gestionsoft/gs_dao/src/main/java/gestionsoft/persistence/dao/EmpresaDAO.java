@@ -1,8 +1,8 @@
-package persistence.dao;
+package gestionsoft.persistence.dao;
 
 import java.util.List;
 
-import persistence.entity.Empresa;
+import gestionsoft.persistence.entity.Empresa;
 
 /**
  * 

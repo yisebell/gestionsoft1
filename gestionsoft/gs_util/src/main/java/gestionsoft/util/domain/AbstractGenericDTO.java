@@ -1,4 +1,4 @@
-package util.domain;
+package gestionsoft.util.domain;
 
 import java.io.Serializable;
 

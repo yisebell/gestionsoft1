@@ -1,4 +1,4 @@
-package business;
+package gestionsoft.business;
 
 /**
  * Interface que representa a la funcionalidad generica de todos los servicios.

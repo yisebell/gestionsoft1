@@ -1,4 +1,4 @@
-package business.impl;
+package gestionsoft.business.impl;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,8 +8,8 @@ import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import business.GenericService;
-import util.domain.AbstractGenericDTO;
+import gestionsoft.business.GenericService;
+import gestionsoft.util.domain.AbstractGenericDTO;
 
 /**
  * Clase que representa la generalizacion de los servicios de negocio para la implementacion de los

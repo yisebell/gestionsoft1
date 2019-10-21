@@ -2,7 +2,7 @@ package gestionsoft.web.view.session;
 
 import java.util.Stack;
 
-import util.domain.AbstractGenericDTO;
+import gestionsoft.util.domain.AbstractGenericDTO;
 
 
 /**

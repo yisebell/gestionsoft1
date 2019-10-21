@@ -6,14 +6,13 @@ package gestionsoft.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
-import business.EmpresaService;
-import util.domain.EmpresaDTO;
+import gestionsoft.business.EmpresaService;
+import gestionsoft.util.domain.EmpresaDTO;
 import gestionsoft.web.controller.common.GenericManagedBean;
 import gestionsoft.web.view.util.FacesUtil;
 
@@ -89,7 +88,7 @@ public class EmpresaController extends GenericManagedBean {
 	{
 		if (empresasSeleccionadas == null)
 		{
-			empresasSeleccionadas = new ArrayList<>();
+			empresasSeleccionadas = new ArrayList<EmpresaDTO>();
 		}
 		return empresasSeleccionadas;
 	}

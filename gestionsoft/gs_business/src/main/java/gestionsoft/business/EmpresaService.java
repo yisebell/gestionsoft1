@@ -1,8 +1,8 @@
-package business;
+package gestionsoft.business;
 
 import java.util.List;
 
-import util.domain.EmpresaDTO;
+import gestionsoft.util.domain.EmpresaDTO;
 
 /**
  * 

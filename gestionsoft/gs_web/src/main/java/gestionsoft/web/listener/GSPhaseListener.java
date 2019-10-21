@@ -25,10 +25,13 @@ public final class GSPhaseListener implements PhaseListener {
 	private static final long serialVersionUID = 1L;
 	private static final String sessionToken = "MULTI_PAGE_MESSAGES_SUPPORT";
 	
+	public GSPhaseListener() {
+		super();
+	}
+	
 	/**
 	 * {@inheritDoc}
 	 */	
-	@Override
 	public void afterPhase(final PhaseEvent event) {
       if (!PhaseId.RENDER_RESPONSE.equals(event.getPhaseId())) {
             FacesContext facesContext = event.getFacesContext();
@@ -39,7 +42,6 @@ public final class GSPhaseListener implements PhaseListener {
 	/**
 	 * {@inheritDoc}
 	 */	
-	@Override
 	public void beforePhase(final PhaseEvent event) {
 	       FacesContext facesContext = event.getFacesContext();
 	        this.saveMessages(facesContext);
@@ -59,7 +61,6 @@ public final class GSPhaseListener implements PhaseListener {
 	 * 
 	 * @return identificador de la fase que se va evaluar.
 	 */
-	@Override
 	public PhaseId getPhaseId() {
 		return PhaseId.ANY_PHASE;
 	}

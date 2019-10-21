@@ -1,7 +1,7 @@
-package business.builder;
+package gestionsoft.business.builder;
 
-import persistence.entity.Empresa;
-import util.domain.EmpresaDTO;
+import gestionsoft.persistence.entity.Empresa;
+import gestionsoft.util.domain.EmpresaDTO;
 
 /**
  * Clase que implementa el builder para la transformacion de entidades de persistencia para las empresas

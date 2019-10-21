@@ -2,7 +2,7 @@ package gestionsoft.web.view.session;
 
 import java.io.Serializable;
 
-import util.domain.AbstractGenericDTO;
+import gestionsoft.util.domain.AbstractGenericDTO;
 
 /**
  * Clase que permite salvar el estado de filtro y regla de navegacion de retorno

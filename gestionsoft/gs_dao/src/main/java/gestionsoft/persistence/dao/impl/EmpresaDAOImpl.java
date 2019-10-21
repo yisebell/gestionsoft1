@@ -1,7 +1,7 @@
 /**
  * 
  */
-package persistence.dao.impl;
+package gestionsoft.persistence.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,10 +10,9 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
-import persistence.dao.EmpresaDAO;
-import persistence.dao.exception.GSDAOException;
-import persistence.entity.Empresa;
-import util.domain.EmpresaDTO;
+import gestionsoft.persistence.dao.EmpresaDAO;
+import gestionsoft.persistence.dao.exception.GSDAOException;
+import gestionsoft.persistence.entity.Empresa;
 
 /**
  * 
@@ -24,8 +23,8 @@ import util.domain.EmpresaDTO;
  * @version 1.0
  * @see
  */
-@Repository
-public final class EmpresaDAOImpl extends AbstractGenericDAOImpl<Empresa> implements EmpresaDAO {
+@Repository("empresaDAO")
+public class EmpresaDAOImpl extends AbstractGenericDAOImpl<Empresa> implements EmpresaDAO {
 
 	/**
 	 * Constructor

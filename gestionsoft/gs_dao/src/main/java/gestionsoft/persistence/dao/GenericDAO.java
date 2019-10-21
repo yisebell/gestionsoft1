@@ -1,9 +1,9 @@
-package persistence.dao;
+package gestionsoft.persistence.dao;
 
 
 import java.io.Serializable;
 
-import persistence.dao.exception.GSDAOException;
+import gestionsoft.persistence.dao.exception.GSDAOException;
 
 
 /**
