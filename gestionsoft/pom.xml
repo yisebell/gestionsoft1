@@ -16,8 +16,8 @@
 	<properties>
         <!-- Por defecto se realiza el skip de tests. -->
     	<skipTests>true</skipTests>
-    	<spring.version>5.2.0.RELEASE</spring.version>
-    	<hibernate.version>5.4.6.Final</hibernate.version>
+    	<spring.version>4.2.2.RELEASE</spring.version>
+    	<hibernate.version>5.4.7.Final</hibernate.version>
     </properties>    
 
     <modules>
@@ -90,14 +90,14 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-aspects</artifactId>
-		    <version>5.2.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context-support</artifactId>
-		    <version>5.2.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->

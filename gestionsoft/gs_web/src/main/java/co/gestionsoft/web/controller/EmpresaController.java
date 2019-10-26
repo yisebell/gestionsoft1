@@ -31,6 +31,7 @@ public class EmpresaController extends GenericManagedBean {
 	
 	// Constante que posee el nombre de localizacion del servicio descuentoService
 	private static final String EMPRESA_SERVICE = "empresaService";
+	private static final long ID_EMPRESA = 1L;
 	
 	// Atributos de la clase.
 	@Autowired
@@ -39,6 +40,7 @@ public class EmpresaController extends GenericManagedBean {
 	
 	// Listas
 	private List<EmpresaDTO> empresasSeleccionadas;
+	private EmpresaDTO empresa;
 
 	/**
 	 * 
@@ -52,7 +54,7 @@ public class EmpresaController extends GenericManagedBean {
 	 */
 	@PostConstruct
 	public void init() {
-		//empresasSeleccionadas = getEmpresaService().obtenerEmpresa();
+		empresa = getEmpresaService().obtener(ID_EMPRESA);
 	}
 	
 	/**
@@ -96,11 +98,12 @@ public class EmpresaController extends GenericManagedBean {
 		this.empresasSeleccionadas = empresasSeleccionadas;
 	}
 	
-	/**
-	 * Metodo para cargar la empresa
-	 */
-	public void cargarEmpresa() {
-		empresasSeleccionadas = getEmpresaService().obtenerEmpresa();
+	public EmpresaDTO getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(EmpresaDTO empresa) {
+		this.empresa = empresa;
 	}
 
 }

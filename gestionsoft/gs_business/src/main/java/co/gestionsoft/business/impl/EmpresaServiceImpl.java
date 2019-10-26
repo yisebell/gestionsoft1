@@ -30,7 +30,7 @@ public class EmpresaServiceImpl implements EmpresaService {
 	
 	@Autowired
 	@Qualifier("empresaDAO")
-	public EmpresaDAO empresaDAO;
+	private EmpresaDAO empresaDAO;
 
 	/**
 	 * 
@@ -39,6 +39,9 @@ public class EmpresaServiceImpl implements EmpresaService {
 		super();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<EmpresaDTO> obtenerEmpresa() {
 		List<EmpresaDTO> empresaDTOList = null;
@@ -51,6 +54,16 @@ public class EmpresaServiceImpl implements EmpresaService {
 		}
 		
 		return empresaDTOList;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public EmpresaDTO obtener(long idEmpresa) {
+		Empresa empresa = empresaDAO.obtener(idEmpresa);
+		
+		return EmpresaBuilder.convertToDTO(empresa);
 	}
 
 }

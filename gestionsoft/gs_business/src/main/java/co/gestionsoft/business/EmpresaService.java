@@ -16,9 +16,15 @@ import co.gestionsoft.util.domain.EmpresaDTO;
 public interface EmpresaService {
 	
 	/**
-	 * Mètodo para obtener la empresa
+	 * Mètodo para obtener la lista de empresas
 	 * 
 	 */
 	List<EmpresaDTO> obtenerEmpresa();
+	
+	/**
+	 * Mètodo para obtener la empresa
+	 * 
+	 */
+	EmpresaDTO obtener(long idEmpresa);
 
 }
