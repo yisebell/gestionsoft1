@@ -7,7 +7,7 @@
 
 	<!-- Se define el phase listener de la aplicacion. -->
 	<lifecycle>
-		<phase-listener>gestionsoft.web.listener.GSPhaseListener</phase-listener>
+		<phase-listener>co.gestionsoft.web.listener.GSPhaseListener</phase-listener>
 	</lifecycle>
 
 	<!-- Se define el soporte de Spring para EL sobre faces. -->
@@ -23,12 +23,12 @@
 		
 		<!-- Se define la ruta y clave del fichero de definicion de textos. --> 
 		<resource-bundle>
-			<base-name>web.view.messages</base-name>
+			<base-name>co.gestionsoft.web.view.messages</base-name>
 	    	<var>messages</var>
 		</resource-bundle>
 
 		<!-- Se define la ruta de definicion de claves de librerias. -->      
-        <message-bundle>web.view.messages</message-bundle>
+        <message-bundle>co.gestionsoft.web.view.messages</message-bundle>
 
         <!-- Se define el locale de la aplicacion. -->
         <locale-config>

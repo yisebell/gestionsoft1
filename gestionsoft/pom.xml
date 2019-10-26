@@ -16,6 +16,8 @@
 	<properties>
         <!-- Por defecto se realiza el skip de tests. -->
     	<skipTests>true</skipTests>
+    	<spring.version>5.2.0.RELEASE</spring.version>
+    	<hibernate.version>5.4.6.Final</hibernate.version>
     </properties>    
 
     <modules>
@@ -33,33 +35,48 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-core</artifactId>
-		    <version>5.2.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context</artifactId>
-		    <version>5.2.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+				
 		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>5.2.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>5.2.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
-		    <version>5.2.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
@@ -76,6 +93,12 @@
 		    <version>5.2.0.RELEASE</version>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>5.2.0.RELEASE</version>
+		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
@@ -103,8 +126,16 @@
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-core</artifactId>
-		    <version>5.4.6.Final</version>
+		    <version>${hibernate.version}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/hibernate-entitymanager/hibernate-entitymanager -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>${hibernate.version}</version>
+		    <scope>provided</scope>
+		</dependency>		
 		
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>

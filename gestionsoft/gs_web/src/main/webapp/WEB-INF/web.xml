@@ -38,6 +38,82 @@
  		<param-value>true</param-value>
  	</context-param>
  	
+ 	<!-- Resolucion parcial del bug de EL. -->
+ 	<context-param>
+  		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+  		<param-value>true</param-value>
+ 	</context-param>
+ 	
+ 	<!-- Parametro para permitir guardar unicamente los componentes del arbol que se hayan modificado (default). -->
+ 	<context-param>
+  		<param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+  		<param-value>true</param-value>
+ 	</context-param>
+ 	
+ 	<!-- Se salva el estado en servidor (default), en lugar de mantener en cliente. -->
+ 	<context-param>
+  		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+  		<param-value>server</param-value>
+ 	</context-param>
+
+	<!-- Se indica que se serializa el estado de la vista (no el arbol) a byte stream antes de guardarlo en session (default true). Guarda referencia en otro caso. Solo Myfaces. --> 
+ 	<context-param>
+  		<param-name>org.apache.myfaces.SERIALIZE_STATE_IN_SESSION</param-name>
+  		<param-value>false</param-value>
+ 	</context-param>
+
+	<!-- Se indica que se serializa el estado de la vista (no el arbol)  a byte stream antes de guardarlo en session (default false). Guarda referencia en otro caso. Solo Mojarra. -->
+ 	<context-param>
+  		<param-name>com.sun.faces.serializeServerState</param-name>
+  		<param-value>false</param-value>
+ 	</context-param> 	
+ 	
+ 	<!--  Se indica si se desea serializar la vista (arbol) en el servidor. Configuracion para clustering / HA / failover. -->
+	<context-param>
+		<param-name>com.sun.faces.enableHighAvailability</param-name>
+		<param-value>false</param-value>
+	</context-param> 	
+ 	<!-- TODO: No habra session failover por el momento. -->
+ 	
+
+	<!-- Se indica el numero maximo de vistas almacenadas en session. Solo Myfaces. -->  
+ 	<context-param>
+  		<param-name>org.apache.myfaces.NUMBER_OF_VIEWS_IN_SESSION</param-name>
+  		<param-value>15</param-value>
+ 	</context-param>
+ 	<context-param>
+ 		 <!-- Solo desde 2.0.6. Antes, tambien como vista logica. -->
+  		<param-name>org.apache.myfaces.NUMBER_OF_SEQUENTIAL_VIEWS_IN_SESSION</param-name>
+  		<param-value>15</param-value> 	
+ 	</context-param>
+
+	<!-- Se indica el numero maximo de vistas almacenadas en session. Solo Mojarra. -->
+ 	<context-param>
+  		<param-name>com.sun.faces.numberOfLogicalViews</param-name>
+  		<param-value>15</param-value>
+ 	</context-param>	
+ 	<context-param>
+  		<param-name>com.sun.faces.numberOfViewsInSession</param-name>
+  		<param-value>15</param-value>
+ 	</context-param>
+
+	<!-- Se habilita el cacheado de recursos faces 2.0 (default). -->
+ 	<context-param>
+  		<param-name>org.apache.myfaces.RESOURCE_HANDLER_CACHE_ENABLED</param-name>
+  		<param-value>true</param-value>
+ 	</context-param>
+ 	
+ 	<!-- Se define el tamanyo de la cache de recursos (default 500). Solo MyFaces. -->
+ 	<context-param>
+  		<param-name>org.apache.myfaces.RESOURCE_HANDLER_CACHE_SIZE</param-name>
+  		<param-value>2048</param-value>
+ 	</context-param> 
+ 	<!-- Se define el tamanyo de la cache de recursos (default 2048). Solo Mojarra. -->
+ 	<context-param>
+ 		<param-name>com.sun.faces.resourceBufferSize</param-name>
+ 		<param-value>2048</param-value>
+ 	</context-param>
+ 	
  	<context-param>
 	    <param-name>primefaces.THEME</param-name>
 	    <param-value>omega</param-value>

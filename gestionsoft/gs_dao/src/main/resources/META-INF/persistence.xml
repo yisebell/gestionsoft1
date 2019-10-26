@@ -9,9 +9,9 @@
 		<jar-file>gs_persistence.jar</jar-file>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
 		
-		<class>persistence.entity.Empresa</class>		
-		<class>persistence.entity.Rol</class>
-		<class>persistence.entity.User</class>
+		<class>co.gestionsoft.persistence.entity.Empresa</class>		
+		<class>co.gestionsoft.persistence.entity.Rol</class>
+		<class>co.gestionsoft.persistence.entity.User</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm"/>

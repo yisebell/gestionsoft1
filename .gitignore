@@ -23,3 +23,7 @@
 hs_err_pid*
 .settings
 *.project
+*.classpath
+*.gitignore
+*.pmd
+gestionsoft/gs_web/.metadata/src/main/webapp/WEB-INF/faces-config.pageflow
