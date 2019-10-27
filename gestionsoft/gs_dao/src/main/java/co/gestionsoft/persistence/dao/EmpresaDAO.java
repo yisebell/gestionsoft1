@@ -6,7 +6,8 @@ import co.gestionsoft.persistence.entity.Empresa;
 
 /**
  * 
- * Interface que define los metodos de acceso a la entidad de persistencia de empresas.
+ * Interface que define los metodos de acceso a la entidad
+ * de persistencia de empresas.
  * 
  * @author james
  * @date 20/10/2019
@@ -15,6 +16,10 @@ import co.gestionsoft.persistence.entity.Empresa;
  */
 public interface EmpresaDAO extends GenericDAO<Empresa>{	
 	
-	List<Empresa> obtenerEmpresa();
+	/**
+	 * Mètodo para obtener la lista de empresas
+	 * 
+	 */
+	List<Empresa> obtenerEmpresas();
 
 }

@@ -8,8 +8,10 @@ import co.gestionsoft.util.domain.AbstractGenericDTO;
 /**
  * Clase que representa a un contenedor para su persistencia en HTTPSession.
  * 
- * @author a586979
- * @date 06/12/2014
+ * @author james
+ * @date 20/10/2019
+ * @version 1.0
+ * @see
  */
 public final class SessionContainer {
 

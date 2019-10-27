@@ -4,6 +4,7 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
         version="2.0">
     <persistence-unit name="PU_GS_NOXA" transaction-type="JTA">
+    	<description>Configuracion unidad de persistencia y mapeo de objetos</description>
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <jta-data-source>java:/jdbc/GS_DS_NOXA</jta-data-source>		
 		

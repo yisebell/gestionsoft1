@@ -3,11 +3,12 @@ package co.gestionsoft.web.controller.common;
 import java.io.Serializable;
 import java.util.ResourceBundle;
 /**
- * Clase que representa el controlador generico faces y que sera extendido por aquellos 
+ * Clase que representa el controlador generico faces 
+ * y que sera extendido por aquellos 
  * managed beans que requieran tener un scope de tipo vista o session.
  * 
- * @author a586979
- * @date 11/11/2014
+ * @author james
+ * @date 27/10/2019
  * @version 1.0
  * @see
  */
@@ -23,7 +24,7 @@ public abstract class GenericManagedBean implements Serializable {
 	protected static final ResourceBundle BUNDLE = ResourceBundle.getBundle(MESSAGE_RESOURCE);	
 	
 	// Constante numerica de valor cero.
-	protected static final Long ZERO_AS_VALUE = Long.valueOf(0);
+	protected static final Long ZERO_LONG = Long.valueOf(0);
 	
 	// Atributos de la clase.
 	protected boolean loadSuccess;

@@ -15,8 +15,10 @@ import co.gestionsoft.web.view.session.SessionContainer;
  * Clase que ofrece ciertas utilidades sobre el objeto de session, especialmente, la
  * conservacion del estado de retorno entre pantallas.
  * 
- * @author a586979
- * @date 06/11/2014
+ * @author james
+ * @date 20/10/2019
+ * @version 1.0
+ * @see
  */
 public final class SessionUtil {
 
@@ -77,7 +79,9 @@ public final class SessionUtil {
 	 */
 	public static void saveState(final String backwardNavigationRule, final AbstractGenericDTO filter) {
 		final SessionContainer container = getSessionContainer();
-		container.saveStateBackward(backwardNavigationRule, filter);
+		if(container != null) {
+			container.saveStateBackward(backwardNavigationRule, filter);
+		}		
 	}
 	
 	/**

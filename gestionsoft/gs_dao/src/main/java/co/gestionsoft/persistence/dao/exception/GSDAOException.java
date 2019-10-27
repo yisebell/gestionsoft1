@@ -1,10 +1,10 @@
 package co.gestionsoft.persistence.dao.exception;
 
 /**
- * Clase que representa el tipo de excepcion que propaga la capa DAO y que extiende
- * de la excepcion padre.
+ * Clase que representa el tipo de excepcion que propaga la capa DAO
+ * y que extiende de la excepcion padre.
  * 
- * @author ljhidalgo
+ * @author james
  * @date 17/10/2019
  * @version 1.0
  * @see

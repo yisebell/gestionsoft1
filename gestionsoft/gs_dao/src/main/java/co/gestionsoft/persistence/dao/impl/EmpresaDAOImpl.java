@@ -28,9 +28,12 @@ public final class EmpresaDAOImpl extends AbstractGenericDAOImpl<Empresa> implem
 		super();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Empresa> obtenerEmpresa() {
+	public List<Empresa> obtenerEmpresas() {
 		final Query query = nonXAEntityManager.createQuery("SELECT emp FROM Empresa emp");
 		return (List<Empresa>) query.getResultList();
 	}

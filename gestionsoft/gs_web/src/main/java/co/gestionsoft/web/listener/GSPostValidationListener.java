@@ -1,14 +1,13 @@
 package co.gestionsoft.web.listener;
 
 import javax.faces.component.UIInput;
-import javax.faces.event.AbortProcessingException;
 import javax.faces.event.ListenerFor;
 import javax.faces.event.SystemEvent;
 import javax.faces.event.SystemEventListener;
 
 /**
- * Clase que permite procesar los errores de validacion JSR-303 para la gestión de la visualizacion de errores.
- * de UI Components.
+ * Clase que permite procesar los errores de validacion 
+ * JSR-303 para la gestión de la visualizacion de errores de UI Components.
  * 
  * @author james
  * @date 20/10/2019
@@ -18,6 +17,9 @@ import javax.faces.event.SystemEventListener;
 @ListenerFor(sourceClass=javax.faces.component.html.HtmlInputText.class, systemEventClass=javax.faces.event.PostValidateEvent.class)
 public final class GSPostValidationListener implements SystemEventListener {
  
+	private static final String STYLE_CLASS = "styleClass";
+	private static final String UI_INPUT_INVALID = "ui-input-invalid";
+	
 	/**
 	 * Constructor por defecto de la clase.
 	 */
@@ -35,11 +37,11 @@ public final class GSPostValidationListener implements SystemEventListener {
     /**
      * {@inheritDoc}
      */
-    public void processEvent(final SystemEvent event) throws AbortProcessingException {
+    public void processEvent(final SystemEvent event) {
         final UIInput source = (UIInput) event.getSource();
  
         if (!source.isValid()) {
-            source.getAttributes().put("styleClass", "ui-input-invalid");
+            source.getAttributes().put(STYLE_CLASS, UI_INPUT_INVALID);
         }
     }
     

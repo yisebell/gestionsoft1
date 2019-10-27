@@ -16,6 +16,8 @@ import javax.faces.event.PhaseListener;
  * 
  * @author james
  * @date 08/10/2014 
+ * @version 1.0
+ * @see
  */
 public final class GSPhaseListener implements PhaseListener {
 	
@@ -23,7 +25,7 @@ public final class GSPhaseListener implements PhaseListener {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static final String sessionToken = "MULTI_PAGE_MESSAGES_SUPPORT";
+	private static final String SESSION_TOKEN = "MULTI_PAGE_MESSAGES_SUPPORT";
 	
 	public GSPhaseListener() {
 		super();
@@ -46,12 +48,9 @@ public final class GSPhaseListener implements PhaseListener {
 	       FacesContext facesContext = event.getFacesContext();
 	        this.saveMessages(facesContext);
 	 
-	        if (PhaseId.RENDER_RESPONSE.equals(event.getPhaseId()))
-	        {
-	            if (!facesContext.getResponseComplete())
-	            {
-	                this.restoreMessages(facesContext);
-	            }
+	        if (PhaseId.RENDER_RESPONSE.equals(event.getPhaseId()) 
+	        		&& !facesContext.getResponseComplete()){
+	            this.restoreMessages(facesContext);
 	        }
 	}
 
@@ -81,14 +80,14 @@ public final class GSPhaseListener implements PhaseListener {
         }
  
         Map<String, Object> sessionMap = facesContext.getExternalContext().getSessionMap();
-        List<FacesMessage> existingMessages = (List<FacesMessage>) sessionMap.get(sessionToken);
+        List<FacesMessage> existingMessages = (List<FacesMessage>) sessionMap.get(SESSION_TOKEN);
         if (existingMessages != null)
         {
             existingMessages.addAll(messages);
         }
         else
         {
-            sessionMap.put(sessionToken, messages);
+            sessionMap.put(SESSION_TOKEN, messages);
         }
         return messages.size();
     }
@@ -97,7 +96,7 @@ public final class GSPhaseListener implements PhaseListener {
     private int restoreMessages(final FacesContext facesContext)
     {
         Map<String, Object> sessionMap = facesContext.getExternalContext().getSessionMap();
-        List<FacesMessage> messages = (List<FacesMessage>) sessionMap.remove(sessionToken);
+        List<FacesMessage> messages = (List<FacesMessage>) sessionMap.remove(SESSION_TOKEN);
  
         if (messages == null)
         {
@@ -105,9 +104,9 @@ public final class GSPhaseListener implements PhaseListener {
         }
  
         int restoredCount = messages.size();
-        for (Object element : messages)
+        for (FacesMessage element : messages)
         {
-            facesContext.addMessage(null, (FacesMessage) element);
+            facesContext.addMessage(null, element);
         }
         return restoredCount;
     }	

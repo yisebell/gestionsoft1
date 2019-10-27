@@ -45,7 +45,7 @@ public class EmpresaServiceImpl extends GenericServiceImpl implements EmpresaSer
 	public List<EmpresaDTO> obtenerEmpresas() {
 		List<EmpresaDTO> empresaDTOList = null;
 		
-		List<Empresa> empresaEntitylist = empresaDAO.obtenerEmpresa();
+		List<Empresa> empresaEntitylist = empresaDAO.obtenerEmpresas();
 		
 		empresaDTOList = new ArrayList<>();
 		// Recorremos la lista de entidades y las convertimos
