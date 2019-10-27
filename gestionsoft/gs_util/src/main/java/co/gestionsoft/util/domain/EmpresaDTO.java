@@ -8,7 +8,7 @@ package co.gestionsoft.util.domain;
  * @version 1.0
  * @see
  */
-public class EmpresaDTO extends AbstractGenericDTO implements Comparable<EmpresaDTO>{
+public class EmpresaDTO extends AbstractGenericDTO{
 
 	/**
 	 * Serial
@@ -245,11 +245,5 @@ public class EmpresaDTO extends AbstractGenericDTO implements Comparable<Empresa
 	public void setSlogan(String slogan) {
 		this.slogan = slogan;
 	}
-
-	@Override
-	public int compareTo(EmpresaDTO arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	
 } // fin class Empresa
