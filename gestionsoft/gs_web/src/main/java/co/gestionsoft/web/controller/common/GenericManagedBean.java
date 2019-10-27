@@ -2,6 +2,9 @@ package co.gestionsoft.web.controller.common;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
+
+import org.apache.log4j.Logger;
+
 /**
  * Clase que representa el controlador generico faces 
  * y que sera extendido por aquellos 
@@ -25,6 +28,9 @@ public abstract class GenericManagedBean implements Serializable {
 	
 	// Constante numerica de valor cero.
 	protected static final Long ZERO_LONG = Long.valueOf(0);
+	
+	// Constante para administrar los logs
+	protected static final Logger LOGGER = Logger.getLogger(GenericManagedBean.class);
 	
 	// Atributos de la clase.
 	protected boolean loadSuccess;
