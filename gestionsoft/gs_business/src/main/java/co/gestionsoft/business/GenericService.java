@@ -1,7 +1,8 @@
 package co.gestionsoft.business;
 
 /**
- * Interface que representa a la funcionalidad generica de todos los servicios.
+ * Interface que representa a la funcionalidad generica
+ * de todos los servicios.
  * 
  * @author james
  * @date 17/10/2019

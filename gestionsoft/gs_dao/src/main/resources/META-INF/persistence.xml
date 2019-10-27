@@ -6,12 +6,7 @@
     <persistence-unit name="PU_GS_NOXA" transaction-type="JTA">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <jta-data-source>java:/jdbc/GS_DS_NOXA</jta-data-source>
-		<jar-file>gs_persistence.jar</jar-file>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
-		
-		<class>co.gestionsoft.persistence.entity.Empresa</class>		
-		<class>co.gestionsoft.persistence.entity.Rol</class>
-		<class>co.gestionsoft.persistence.entity.User</class>
 		
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm"/>
@@ -48,6 +43,10 @@
 			<!-- Generacion temporal de estadisticas. -->
 			<property name="hibernate.generate_statistics" value="false" />
         </properties>		
+		
+		<class>co.gestionsoft.persistence.entity.Empresa</class>		
+		<class>co.gestionsoft.persistence.entity.Rol</class>
+		<class>co.gestionsoft.persistence.entity.User</class>
 		
     </persistence-unit>
 </persistence>

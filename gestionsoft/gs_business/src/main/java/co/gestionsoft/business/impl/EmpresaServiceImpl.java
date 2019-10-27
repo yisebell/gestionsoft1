@@ -16,7 +16,6 @@ import co.gestionsoft.persistence.entity.Empresa;
 import co.gestionsoft.util.domain.EmpresaDTO;
 
 /**
- * 
  * Clase que implementa la interfaz de EmpresaService
  * 
  * @author james
@@ -26,14 +25,14 @@ import co.gestionsoft.util.domain.EmpresaDTO;
  */
 @Service("empresaService")
 @Transactional(propagation = Propagation.SUPPORTS)
-public class EmpresaServiceImpl implements EmpresaService {
+public class EmpresaServiceImpl extends GenericServiceImpl implements EmpresaService {
 	
 	@Autowired
 	@Qualifier("empresaDAO")
 	private EmpresaDAO empresaDAO;
 
 	/**
-	 * 
+	 * Metodo constructor
 	 */
 	public EmpresaServiceImpl() {
 		super();
@@ -43,12 +42,14 @@ public class EmpresaServiceImpl implements EmpresaService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<EmpresaDTO> obtenerEmpresa() {
+	public List<EmpresaDTO> obtenerEmpresas() {
 		List<EmpresaDTO> empresaDTOList = null;
 		
 		List<Empresa> empresaEntitylist = empresaDAO.obtenerEmpresa();
 		
 		empresaDTOList = new ArrayList<>();
+		// Recorremos la lista de entidades y las convertimos
+		// en objetos dto
 		for(Empresa empresa : empresaEntitylist) {
 			empresaDTOList.add(EmpresaBuilder.convertToDTO(empresa));
 		}
@@ -62,8 +63,8 @@ public class EmpresaServiceImpl implements EmpresaService {
 	@Override
 	public EmpresaDTO obtener(long idEmpresa) {
 		Empresa empresa = empresaDAO.obtener(idEmpresa);
-		
+		// Retornamos el objeto dto
 		return EmpresaBuilder.convertToDTO(empresa);
 	}
 
-}
+} // Fin class EmpresaServiceImpl

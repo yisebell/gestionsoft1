@@ -4,7 +4,8 @@ import co.gestionsoft.persistence.entity.Empresa;
 import co.gestionsoft.util.domain.EmpresaDTO;
 
 /**
- * Clase que implementa el builder para la transformacion de entidades de persistencia para las empresas
+ * Clase que implementa el builder para la transformacion 
+ * de entidades de persistencia para las empresas
  * 
  * @author james
  * @date 20/10/2019
@@ -12,6 +13,13 @@ import co.gestionsoft.util.domain.EmpresaDTO;
  * @see
  */
 public final class EmpresaBuilder {
+	
+	/**
+	 * Metodo constructor
+	 */
+	private EmpresaBuilder() {
+		super();
+	}
 
 	/**
 	 * 
@@ -47,4 +55,4 @@ public final class EmpresaBuilder {
 		return dto;
 	}
 
-}
+} // Fin class EmpresaBuilder

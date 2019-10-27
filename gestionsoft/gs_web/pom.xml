@@ -79,12 +79,6 @@
                             <Project-Version>${project.version}</Project-Version>
                             <Hudson-BuildTag>${BUILD_TAG}</Hudson-BuildTag>
                             <Mode>${env}</Mode>
-                            
-                            <!--  
-                            	a586979: En lugar de emplear el descriptor jboss deployment, se pueden incluir las 
-                            	dependencias via METAINF.
-                            <Dependencies>org.apache.log4j,org.apache.commons.logging,correos.arquitectura30,org.springframework</Dependencies>
-                            -->
                              
                         </manifestEntries>
                     </archive>

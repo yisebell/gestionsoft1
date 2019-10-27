@@ -19,11 +19,11 @@ public interface EmpresaService {
 	 * Mètodo para obtener la lista de empresas
 	 * 
 	 */
-	List<EmpresaDTO> obtenerEmpresa();
+	List<EmpresaDTO> obtenerEmpresas();
 	
 	/**
-	 * Mètodo para obtener la empresa
-	 * 
+	 * Mètodo para obtener una empresa
+	 * en particular
 	 */
 	EmpresaDTO obtener(long idEmpresa);
 

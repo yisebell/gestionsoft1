@@ -61,7 +61,7 @@
 					<filtering>true</filtering>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<generateApplicationXml>true</generateApplicationXml>
-					<version>6</version>
+					<version>7</version>
 					<modules>
 						<webModule>
 							<groupId>co.gestionsoft</groupId>
