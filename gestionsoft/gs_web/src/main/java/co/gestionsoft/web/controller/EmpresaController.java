@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
 
 import co.gestionsoft.business.EmpresaService;
 import co.gestionsoft.util.domain.EmpresaDTO;
+import co.gestionsoft.util.utilidades.Utilidades;
 import co.gestionsoft.web.controller.common.GenericManagedBean;
+import co.gestionsoft.web.view.util.FacesUtil;
 
 /**
  * Clase controller para Empresa.
@@ -21,7 +24,8 @@ import co.gestionsoft.web.controller.common.GenericManagedBean;
  * @version 1.0
  * @see
  */
-@Controller
+@ManagedBean
+@ViewScoped
 public class EmpresaController extends GenericManagedBean {
 
 	/**
@@ -63,6 +67,9 @@ public class EmpresaController extends GenericManagedBean {
 	 * @return empresaService propiedad empresaService
 	 */
 	public EmpresaService getEmpresaService() {
+		if(Utilidades.isNull(empresaService)) {
+            empresaService = FacesUtil.lookUpBean(EMPRESA_SERVICE, EmpresaService.class);
+		}
 		return empresaService;
 	}
 
